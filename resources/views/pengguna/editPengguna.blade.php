@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('tittle', 'Tambah Pengguna')
+@section('tittle', 'Edit Pengguna')
 
 @section('content')
 <div class="content-wrapper">
@@ -9,7 +9,7 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Tambah Table Pengguna</h1>
+					<h1 class="m-0 text-dark">Edit Table Pengguna</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
@@ -29,43 +29,35 @@
         <div class="col-md-8">
           <div class="card card-success">
             <div class="card-header">
-              <h3 class="card-title">Data Pengguna</h3>
+              <h3 class="card-title">Edit Pengguna</h3>
             </div>
-            <form action="/insertPengguna" method="post" role="form">
+            <form action="/updatePengguna" method="post" role="form">
               @csrf
               <div class="card-body">
+                <input type="text" value="{{$data[0]->id}}" name="id" hidden>
                 <div class="form-group">
                   <label for="namaPengguna">Nama Pengguna</label>
-                  <input type="text" class="form-control" id="namaPengguna" name="namaPengguna" placeholder="Masukkan nama pengguna">
+                  <input type="text" class="form-control" id="namaPengguna" name="namaPengguna" value="{{$data[0]->nama_pengguna}}">
                 </div>
                 <div class="form-group">
                   <label for="namaDepan">Nama Depan</label>
-                  <input type="text" class="form-control" id="namaDepan" name="namaDepan" placeholder="Masukkan nama depan pengguna">
+                  <input type="text" class="form-control" id="namaDepan" name="namaDepan" value="{{$data[0]->nama_depan}}">
                 </div>
                 <div class="form-group">
                   <label for="namaBelakang">Nama Belakang</label>
-                  <input type="text" class="form-control" id="namaBelakang" name="namaBelakang" placeholder="Masukkan nama belakang pengguna">
+                  <input type="text" class="form-control" id="namaBelakang" name="namaBelakang" value="{{$data[0]->nama_belakang}}">
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  <input type="password" class="form-control" id="password" name="password" value="{{$data[0]->password}}">
                 </div>
                 <div class="form-group">
                   <label for="notelp">No Telepon</label>
-                  <input type="number" class="form-control" id="notelp" name="notelp" placeholder="Nomor Hp">
+                  <input type="number" class="form-control" id="notelp" name="notelp" value="{{$data[0]->noHp}}">
                 </div>
                 <div class="form-group">
                   <label for="alamat">Alamat</label>
-                  <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan alamat pengguna">
-                </div>
-                <div class="form-group">
-                  <label for="hakAkses">Hak Akses</label>
-                  <select class="form-control" name="idPengguna">
-                    <option selected disabled selected hidden>Pilih Hak Akses</option>
-                    @foreach($hak as $h)
-                    <option value="{{$h->id}}">{{$h->nama_akses}}</option>
-                    @endforeach
-                  </select>
+                  <input type="text" class="form-control" id="alamat" name="alamat" value="{{$data[0]->alamat}}">
                 </div>
               </div>
               <!-- /.card-body -->

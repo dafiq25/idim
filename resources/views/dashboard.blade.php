@@ -29,13 +29,12 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fa fa-shopping-cart"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">CPU Traffic</span>
+                <span class="info-box-text">Total Pembelian</span>
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                  {{$pembelian}}
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -45,11 +44,11 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-plus"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Likes</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">Toal Penjualan</span>
+                <span class="info-box-number">{{$penjualan}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -62,11 +61,11 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-credit-card"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Sales</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-text">Total Keuntungan</span>
+                <span class="info-box-number">Rp. {{$laba}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -78,8 +77,8 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">New Members</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">Total Pengguna</span>
+                <span class="info-box-number">{{$pengguna}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -88,6 +87,33 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <form action="">
+                  <table class="table table-bordered table-striped text-center">
+                    <thead>
+                      <tr>
+                        <th>Paket</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Paket A( {{$barang[0]->nama_barang}} & {{$barang[1]->nama_barang}} )</td>
+                        <td>
+                          <a href="/beliPaket" class="btn btn-success">Beli Paket</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
         
       </div>

@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('supplier', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('namaSuplier');
+            $table->string('nama_suplier');
             $table->string('alamat');
             $table->string('kontak');
+            $table->boolean('status')->default(1);
         });
     }
 

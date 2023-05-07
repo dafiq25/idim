@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_barang');
             $table->string('keterangan');
             $table->integer('satuan');
+            $table->boolean('status')->default(1);
 
             $table->foreign('id_pengguna', 'fk_pengguna')->references('id')->on('pengguna');
         });

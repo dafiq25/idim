@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('id_barang')->unsigned();
             $table->integer('id_pelanggan')->unsigned();
-            $table->integer('jumlah_penjualan');
             $table->integer('harga_jual');
+            $table->boolean('status')->default(1);
             
             $table->foreign('id_barang', 'fk_barang_jual')->references('id')->on('barang');
             $table->foreign('id_pelanggan', 'fk_pelanggan')->references('id')->on('pelanggan');

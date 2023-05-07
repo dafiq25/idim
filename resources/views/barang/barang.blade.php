@@ -35,24 +35,31 @@
 					<!-- /.card-header -->
 					<div class="card-body">
 						<a href="/tambahBarang" type="button" class="btn btn-success mb-3">Tambah Barang</a>
-						<table id="example1" class="table table-bordered table-striped">
+						<table id="example1" class="table table-bordered table-striped text-center">
 							<thead>
 							<tr>
 								<th>Id Barang</th>
 								<th>Id Pengguna</th>
-								<th>Nama Barang(s)</th>
+								<th>Nama Barang</th>
 								<th>Keterangan</th>
 								<th>Satuan</th>
+								<th>Action</th>
 							</tr>
 							</thead>
 							<tbody>
+							@foreach($data as $d)
 							<tr>
-								<td>Other browsers</td>
-								<td>All others</td>
-								<td>-</td>
-								<td>-</td>
-								<td>U</td>
+								<td>{{$d->id}}</td>
+								<td>{{$d->id_pengguna}}</td>
+								<td>{{$d->nama_barang}}</td>
+								<td>{{$d->keterangan}}</td>
+								<td>{{$d->satuan}}</td>
+								<td>
+									<a href="/editBarang/{{ $d->id }}" type="button" class="btn btn-info mr-3">Edit</a>
+									<a href="/deleteBarang/{{ $d->id }}" type="button" class="btn btn-danger">Delete</a>
+								</td>
 							</tr>
+							@endforeach
 							</tbody>
 							
 						</table>

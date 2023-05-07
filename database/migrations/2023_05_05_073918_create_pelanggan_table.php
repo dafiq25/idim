@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('namaPelanggan');
-            $table->integer('totalSpend');
-            $table->date('tanggalBergabung');
+            $table->string('nama_pelanggan');
+            $table->integer('total_spend');
+            $table->date('tanggal_bergabung');
+            $table->boolean('status')->default(1);
 
         });
     }

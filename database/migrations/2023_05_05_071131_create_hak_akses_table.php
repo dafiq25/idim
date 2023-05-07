@@ -17,6 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('nama_akses');
             $table->string('keterangan')->nullable();
+            $table->boolean('status')->default(1);
         });
     }
 

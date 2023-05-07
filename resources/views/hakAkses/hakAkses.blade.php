@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('tittle', 'Pengguna')
+@section('tittle', 'Hak Akses')
 
 @section('cssLokal')
 <!-- DataTables -->
@@ -15,12 +15,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Table Pengguna</h1>
+					<h1 class="m-0 text-dark">Table Hak Akses</h1>
 				</div><!-- /.col -->
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active">Pengguna</li>
+						<li class="breadcrumb-item active">Hak Akses</li>
 					</ol>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
@@ -34,33 +34,25 @@
 				<div class="card">
 					<!-- /.card-header -->
 					<div class="card-body">
-						<a href="/tambahPengguna" type="button" class="btn btn-success mb-3">Tambah Pengguna</a>
+						<a href="/tambahHakAkses" type="button" class="btn btn-success mb-3">Tambah Hak Akses</a>
 						<table id="example1" class="table table-bordered table-striped text-center">
 							<thead>
 							<tr>
-								<th>Id</th>
-								<th>id Akses</th>
-								<th>Nama Pengguna</th>
-								<th>Nama Depan</th>
-								<th>Nama Belakang</th>
-								<th>Alamat</th>
-								<th>No Telepon</th>
+								<th>Id Hak Akses</th>
+								<th>Nama Akses</th>
+								<th>Keterangan</th>
 								<th>Action</th>
 							</tr>
 							</thead>
 							<tbody>
 							@foreach($data as $d)
 							<tr>
-								<td>{{ $d->id }}</td>
-								<td>{{ $d->id_akses }}</td>
-								<td>{{ $d->nama_pengguna }}</td>
-								<td>{{ $d->nama_depan }}</td>
-								<td>{{ $d->nama_belakang }}</td>
-								<td>{{ $d->alamat }}</td>
-								<td>{{ $d->noHp }}</td>
+								<td>{{$d->id}}</td>
+								<td>{{$d->nama_akses}}</td>
+								<td>{{$d->keterangan}}</td>
 								<td>
-									<a href="/editPengguna/{{ $d->id }}" type="button" class="btn btn-info mr-3">Edit</a>
-									<a href="/deletePengguna/{{ $d->id }}" type="button" class="btn btn-danger">Delete</a>
+									<a href="/editHakAkses/{{ $d->id }}" type="button" class="btn btn-info mr-3">Edit</a>
+									<a href="/deleteHakAkses/{{ $d->id }}" type="button" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
 							@endforeach

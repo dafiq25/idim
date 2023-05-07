@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('id_supplier')->unsigned();
             $table->integer('jumlah_pembelian');
             $table->integer('harga_beli');
+            $table->boolean('status')->default(1);
 
             $table->foreign('id_barang', 'fk_barang_beli')->references('id')->on('barang');
             $table->foreign('id_supplier', 'fk_supplier')->references('id')->on('supplier');

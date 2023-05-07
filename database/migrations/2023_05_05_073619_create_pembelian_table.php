@@ -17,7 +17,6 @@ return new class extends Migration
             $table->increments('id');
             $table->integer('id_barang')->unsigned();
             $table->integer('id_supplier')->unsigned();
-            $table->integer('jumlah_pembelian');
             $table->integer('harga_beli');
             $table->boolean('status')->default(1);
 
